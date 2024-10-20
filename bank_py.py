@@ -43,7 +43,7 @@ class BankAccount:
             print("Transfer unsuccessful. Amount must be positive.")
     
     def get_balance(self):
-        return self.balance, self.number
+        return self.balance
 
 acc2 = BankAccount("Diddy", 1000) # For test
 
