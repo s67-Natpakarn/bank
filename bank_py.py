@@ -1,3 +1,7 @@
+from datetime import datetime
+now = datetime.now()
+formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
+
 class BankAccount:
     bankAcc = []
     def __init__(self, owner, balance=0):
@@ -9,6 +13,7 @@ class BankAccount:
         if amount > 0:
             self.balance += amount
             print(f"\n***Succesfully deposit {amount}***")
+            print(f"***Time of transaction: {formatted_now}***")
             print(f"***Your balance : {self.balance}***")
         else:
             print("Deposit unsuccessful. Amount must be positive.")
@@ -19,6 +24,7 @@ class BankAccount:
         elif amount > 0:
             self.balance -= amount
             print(f"\n***Succesfully withdraw {amount}***")
+            print(f"***Time of transaction: {formatted_now}***")
             print(f"***Your balance : {self.balance}***")
         else:
             print("Withdraw unsuccessful. Amount must be positive.")
@@ -38,6 +44,7 @@ class BankAccount:
             self.balance -= amount
             recipient.balance += amount
             print(f"\n***Transfer successful. {amount} transferred to {recipient.owner}.***")
+            print(f"***Time of transaction: {formatted_now}***")
             print(f"***Your balance : {self.balance}***")
         else:
             print("Transfer unsuccessful. Amount must be positive.")
@@ -45,7 +52,7 @@ class BankAccount:
     def get_balance(self):
         return self.balance
 
-acc2 = BankAccount("Diddy", 1000) # For test
+acc2 = BankAccount("Pammie", 1000) # For test
 
 def getInput():
     owner = input("Enter your bank account name : ")
