@@ -1,6 +1,4 @@
 from datetime import datetime
-now = datetime.now()
-formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
 
 class BankAccount:
     bankAcc = []
@@ -13,6 +11,8 @@ class BankAccount:
         if amount > 0:
             self.balance += amount
             print(f"\n***Succesfully deposit {amount}***")
+            now = datetime.now()
+            formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
             print(f"***Time of transaction: {formatted_now}***")
             print(f"***Your balance : {self.balance}***")
         else:
@@ -24,6 +24,8 @@ class BankAccount:
         elif amount > 0:
             self.balance -= amount
             print(f"\n***Succesfully withdraw {amount}***")
+            now = datetime.now()
+            formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
             print(f"***Time of transaction: {formatted_now}***")
             print(f"***Your balance : {self.balance}***")
         else:
@@ -44,6 +46,8 @@ class BankAccount:
             self.balance -= amount
             recipient.balance += amount
             print(f"\n***Transfer successful. {amount} transferred to {recipient.owner}.***")
+            now = datetime.now()
+            formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
             print(f"***Time of transaction: {formatted_now}***")
             print(f"***Your balance : {self.balance}***")
         else:
